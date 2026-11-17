@@ -125,11 +125,11 @@ header {
     font-weight: 700;
     text-transform: uppercase;
     padding: 20px 0;
-    border-bottom: 1px solid #ddd;
     margin-bottom: 40px;
-    background-color: #ffffff;
+    background-color: #000000;
     z-index: 1000;
     scroll-margin-top: 0;
+    
 }
 
 .nav-tabs a {
@@ -139,8 +139,7 @@ header {
 }
 
 .nav-tabs a:hover, .nav-tabs a.active {
-    color: #000;
-    border-bottom: 2px solid #000;
+    color: #ffffff;
     padding-bottom: 5px;
 }
 
@@ -174,6 +173,7 @@ h1 {
 
 h2 {
     font-family: var(--font-ui);
+    color :#000000;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -185,6 +185,7 @@ h2 {
 }
 
 p {
+    color :#000000;
     font-size: 1.2rem;
     margin-bottom: 1.5em;
 }
