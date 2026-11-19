@@ -1,12 +1,12 @@
 :root {
     --primary-color: #121212;
     --secondary-color: #121212;
-    --accent-color: #df3c32;
-    --bg-color: #fff;
-    --text-color: #121212;
-    --font-heading: 'Playfair Display', 'Adobe Caslon Pro', 'Georgia', 'Times New Roman', serif;
-    --font-body: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
-    --font-ui: 'Playfair Display', Helvetica, Arial, sans-serif;
+    --accent-color: #cc5e59;
+    --bg-color: #f4f0e8;
+    --text-color: #161616;
+    --font-heading: 'Adobe Caslon Pro', 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    --font-body: 'Georgia', 'Playfair Display', 'Times New Roman', serif;
+    --font-ui: 'Trebuchet MS', Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -46,6 +46,9 @@ header {
 
 .hero .sub-masthead {
     color: #aaaaaa;
+    font: var(--font-ui);
+    font-weight: 550;
+    font-size: 1.2rem;
 }
 
 .hero-visual {
@@ -120,7 +123,7 @@ header {
     display: flex;
     justify-content: center;
     gap: 40px;
-    font-family: var(--font-ui);
+    font-family: var(--font-heading);
     font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -145,20 +148,74 @@ header {
 
 
 .reveal-section {
+    display: grid;
+    grid-template-columns: 160px minmax(0, 1fr);
+    gap: 32px;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 80px 32px;
+    border-bottom: 1px solid #050000;
     opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    max-width: 740px; 
-    margin: 0 auto 60px auto;
-    padding: 0 20px;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    align-items: baseline;
 }
 
 .reveal-section.active {
     opacity: 1;
     transform: translateY(0);
-    max-width: 740px; 
-    margin: 0 auto 60px auto;
-    padding: 0 20px;
+}
+
+.reveal-section > h2 {
+    position: sticky;
+    top: 110px;
+    font-family: var(--font-body);
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.55;                       
+    text-transform: none;
+    letter-spacing: 0;
+    color: #121212;
+    margin: 0;
+    padding: 0;
+    border: none;
+    overflow-wrap: break-word;
+    background-color: var(--bg-color);
+    padding: 8px 0;
+    border-left: 2px solid var(--accent-color);
+    padding-left: 12px;
+}
+
+
+.chapter-body {
+    width: 100%;                             
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.chapter-body > :first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.chapter-body p {
+    max-width: none;
+    line-height: 1.75;
+    margin-top: 0;
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .reveal-section {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 50px 20px;
+    }
+    .reveal-section > h2 {
+        position: static;
+        font-size: 1.6rem;
+    }
 }
 
 h1 {
@@ -185,6 +242,7 @@ h2 {
 }
 
 p {
+    text-align: justify;
     color :#000000;
     font-size: 1.2rem;
     margin-bottom: 1.5em;

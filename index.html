@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>adapt</title>
+    <title>Race Through Time and Space</title>
+
+    <link rel="preload" as="image" href="earth-poster.jpg">
+    <link rel="preload" as="video" href="earth-optimitzed.mp4" type="video/mp4">
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,11 +17,11 @@
             <div class="sub-masthead">A Race Through Space and Time</div>
         </div>
         <div class="hero-visual">
-            <video id="earth-vid-1" muted playsinline class="hero-video">
-                <source src="earth.mp4" type="video/mp4">
+            <video id="earth-vid-1" muted playsinline preload="auto" poster="earth-poster.jpg" class="hero-video">
+                <source src="earth-optimized.mp4" type="video/mp4">
             </video>
-            <video id="earth-vid-2" muted playsinline class="hero-video" style="opacity: 0;">
-                <source src="earth.mp4" type="video/mp4">
+            <video id="earth-vid-2" muted playsinline preload="none" class="hero-video" style="opacity: 0;">
+                <source src="earth-optimized.mp4" type="video/mp4">
             </video>
         </div>
 
@@ -29,15 +30,15 @@
     
 
     <nav id="chapters" class="nav-tabs">
-        <a href="#1" class="active">1</a>
+        <a href="#1" class="active">Introduction</a>
         <a href="#2">2</a>
         <a href="#3">3</a>
         <a href="#4">4</a>
-        <a href="#5">5</a>
+        <a href="#5">Conclusion</a>
     </nav>
 
         <section id="1" class="reveal-section">
-            <h2>1</h2>
+            <h2>Introduction</h2>
             <p>
                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -47,20 +48,25 @@
 
         <section id="2" class="reveal-section">
             <h2>2</h2>
+            <div class="chapter-body">
             <p>
                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
+            </div>
         </section>
 
         <section id="3" class="reveal-section">
             <h2>3</h2>
+            <div class="chapter-body">
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
+            </div>
         </section>
             
         <section id="4" class="reveal-section">
             <h2>4</h2>
+            <div class="chapter-body">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
             <div class="article-plot">
@@ -68,17 +74,20 @@
                         class="plot-full"
                         title="Map"></iframe>
             </div>
+            </div>
         </section>
 
         <section id="5" class="reveal-section">
-            <h2>5</h2>
+            <h2>Conclusion</h2>
+            <div class="chapter-body">
             <p>
                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
+            </div>
         </section>
         
         <section id="more" class="reveal-section">
-            <h2>more</h2>
+            <h2>Afterword</h2>
             <p>
                Text
             </p>
