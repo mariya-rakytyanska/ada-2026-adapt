@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }, navObserverOptions);
 
   
-  document.querySelectorAll("section[id]").forEach(section => {
+  document.querySelectorAll("section[id], .subsection[id]").forEach(section => {
     navObserver.observe(section);
   });
 });

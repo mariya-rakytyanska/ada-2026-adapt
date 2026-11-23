@@ -7,13 +7,25 @@
     --font-heading: 'Adobe Caslon Pro', 'Playfair Display', 'Georgia', 'Times New Roman', serif;
     --font-body: 'Georgia', 'Playfair Display', 'Times New Roman', serif;
     --font-ui: 'Trebuchet MS', Helvetica, Arial, sans-serif;
+
+    --wiki-page-bg: #f8f9fa;
+    --wiki-content-bg: #ffffff;
+    --wiki-border: #a2a9b1;
+    --wiki-border-light: #eaecf0;
+    --wiki-text: #202122;
+    --wiki-muted: #54595d;
+    --wiki-link: #0645ad;
+    --wiki-link-visited: #0b0080;
+    --wiki-tab-bg: #f8f9fa;
+    --wiki-font-serif: 'Linux Libertine', 'Georgia', 'Times', serif;
+    --wiki-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Lato, Helvetica, Arial, sans-serif;
 }
 
 body {
     margin: 0;
     padding: 0;
     font-family: var(--font-body);
-    background-color: var(--bg-color);
+    background-color: var(--wiki-page-bg);
     color: var(--text-color);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
@@ -117,48 +129,84 @@ header {
     color: #888;
 }
 
+.wiki-layout {
+    display: grid;
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+    box-sizing: border-box;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+}
+
+.wiki-article {
+    min-width: 0;
+    background-color: var(--wiki-content-bg);
+    border: 1px solid var(--wiki-border);
+}
+
 .nav-tabs {
     position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 20px 0;
-    margin-bottom: 40px;
-    background-color: #000000;
+    top: 24px;
+    display: block;
+    box-sizing: border-box;
+    padding: 12px 14px 14px;
+    font-family: var(--wiki-font-sans);
+    font-size: 0.875rem;
+    font-weight: 400;
+    text-transform: none;
+    background-color: var(--wiki-page-bg);
+    border: 1px solid var(--wiki-border);
     z-index: 1000;
-    scroll-margin-top: 0;
-    
+}
+
+.nav-title {
+    margin: 0 0 8px;
+    padding-bottom: 6px;
+    font-family: var(--wiki-font-sans);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--wiki-text);
+    border-bottom: 1px solid var(--wiki-border-light);
 }
 
 .nav-tabs a {
+    display: block;
+    padding: 4px 0 4px 10px;
+    line-height: 1.4;
     text-decoration: none;
-    color: #999;
-    transition: color 0.2s;
+    color: var(--wiki-link);
+    border-left: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
 }
 
-.nav-tabs a:hover, .nav-tabs a.active {
-    color: #ffffff;
-    padding-bottom: 5px;
+.nav-tabs a:hover {
+    color: #3366cc;
+    text-decoration: underline;
+    padding-bottom: 4px;
+}
+
+.nav-tabs a.active {
+    color: var(--wiki-text);
+    font-weight: 600;
+    border-left-color: #3366cc;
+    padding-bottom: 4px;
 }
 
 
 .reveal-section {
-    display: grid;
-    grid-template-columns: 160px minmax(0, 1fr);
-    gap: 32px;
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 80px 32px;
-    border-bottom: 1px solid #050000;
+    display: block;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 20px 32px 24px;
+    background-color: var(--wiki-content-bg);
+    border: none;
+    color: var(--wiki-text);
+    font-family: var(--wiki-font-sans);
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    align-items: baseline;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .reveal-section.active {
@@ -167,28 +215,43 @@ header {
 }
 
 .reveal-section > h2 {
-    position: sticky;
-    top: 110px;
-    font-family: var(--font-body);
-    font-size: 1.35rem;
-    font-weight: 600;
-    line-height: 1.55;                       
+    position: static;
+    font-family: var(--wiki-font-serif);
+    font-size: 1.75rem;
+    font-weight: 400;
+    line-height: 1.3;
     text-transform: none;
     letter-spacing: 0;
-    color: #121212;
-    margin: 0;
+    color: #000;
+    margin: 0.6em 0 0.5em;
     padding: 0;
     border: none;
+    border-bottom: 1px solid var(--wiki-border);
+    background: none;
     overflow-wrap: break-word;
-    background-color: var(--bg-color);
-    padding: 8px 0;
-    border-left: 2px solid var(--accent-color);
-    padding-left: 12px;
 }
 
+.reveal-section h3 {
+    font-family: var(--wiki-font-sans);
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #000;
+    margin: 1em 0 0.3em;
+    padding: 0;
+}
+
+.subsection {
+    scroll-margin-top: 24px;
+}
+
+.nav-tabs a.nav-sub {
+    padding-left: 24px;
+    font-size: 0.8125rem;
+}
 
 .chapter-body {
-    width: 100%;                             
+    width: 100%;
     min-width: 0;
     margin: 0;
     padding: 0;
@@ -199,22 +262,68 @@ header {
     padding-top: 0;
 }
 
+.reveal-section p,
 .chapter-body p {
     max-width: none;
-    line-height: 1.75;
-    margin-top: 0;
-    text-align: justify;
+    font-family: var(--wiki-font-sans);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--wiki-text);
+    text-align: left;
+    margin: 0.5em 0 1em;
 }
 
-@media (max-width: 768px) {
-    .reveal-section {
+.reveal-section a {
+    color: var(--wiki-link);
+    text-decoration: none;
+}
+.reveal-section a:visited { color: var(--wiki-link-visited); }
+.reveal-section a:hover   { text-decoration: underline; }
+
+.article-plot {
+    margin: 1em 0 1.5em;
+    padding: 6px;
+    background-color: var(--wiki-page-bg);
+    border: 1px solid var(--wiki-border);
+}
+
+.article-plot figcaption,
+.plot-caption {
+    margin: 6px 4px 2px;
+    font-family: var(--wiki-font-sans);
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--wiki-text);
+    text-align: left;
+}
+
+.plot-full {
+    display: block;
+    width: 100%;
+    height: 300px;
+    border: 1px solid var(--wiki-border-light);
+    background-color: #fff;
+}
+
+@media (max-width: 860px) {
+    .wiki-layout {
         grid-template-columns: 1fr;
         gap: 16px;
-        padding: 50px 20px;
+        padding: 16px 0 32px;
+    }
+    .nav-tabs {
+        position: static;
+        margin: 0 16px;
+    }
+    .wiki-article {
+        border-left: none;
+        border-right: none;
+    }
+    .reveal-section {
+        padding: 16px 16px 20px;
     }
     .reveal-section > h2 {
-        position: static;
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -259,13 +368,7 @@ p {
     margin-right: auto;
 }
 
-.plot-full {
-    width: 100%;
-    height: 300px;                 
-    border: none;
-}
-
 html {
     scroll-behavior: smooth; 
-    scroll-padding-top: 100px; 
+    scroll-padding-top: 24px; 
 }
